@@ -19,6 +19,7 @@
     [self createRectButtons];
     [self createUIView];
     [self createButtonEvent];
+    [self createStoreyView];
 }
 
 - (void)createLabel {
@@ -76,16 +77,50 @@
 
 -(void)createUIView {
     UIView* view = [[UIView alloc] init];
-    view.frame = CGRectMake(40, 200, 300, 300);
+    view.frame = CGRectMake(40, 200, 200, 200);
     view.backgroundColor = [UIColor blueColor];
-//    view.alpha = 0.5;
-    UILabel* label = [[UILabel alloc] init];
-    label.text = @"Hello World!";
-    label.frame = CGRectMake(80, 100, 100, 40);
-    label.textColor = [UIColor blackColor];
-    label.backgroundColor = [UIColor redColor];
+    view.alpha = 0.5;
+    view.hidden = YES;
+    UILabel* label = [self createTextLabel: @"Hello"];
     [view addSubview:label];
     [self.view addSubview:view];
+}
+
+- (UILabel*)createTextLabel: (NSString*) value {
+    UILabel* label = [[UILabel alloc] init];
+    label.text = value;
+    label.frame = CGRectMake(80, 100, 100, 40);
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont systemFontOfSize: 16];
+    label.textColor = [UIColor whiteColor];
+    label.shadowColor = [UIColor blackColor];
+    label.shadowOffset = CGSizeMake( 1, 1);
+    label.textAlignment = NSTextAlignmentLeft;
+    label.numberOfLines = 0; //0会按照需要显示的行数进行显示
+    return label;
+}
+
+-(void) createStoreyView{
+    UIView* view01 = [[UIView alloc] init];
+    view01.frame = CGRectMake(100, 200, 150, 150);
+    view01.backgroundColor = [UIColor blueColor];
+    UIView* view02 = [[UIView alloc] init];
+    view02.frame = CGRectMake(125, 225, 150, 150);
+    view02.backgroundColor = [UIColor redColor];
+    UIView* view03 = [[UIView alloc] init];
+    view03.frame = CGRectMake(150, 250, 150, 150);
+    view03.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:view01];
+    [self.view addSubview:view02];
+    [self.view addSubview:view03];
+    
+//    [self.view bringSubviewToFront:view02];
+//    [self.view sendSubviewToBack:view03];
+//    UIView* viewFront = self.view.subviews[2];
+//    UIView* viewBack = self.view.subviews[0];
+//    if (viewBack == view01) {
+//        NSLog(@"equal");
+//    }
 }
 
 - (void)viewDidLoad {
