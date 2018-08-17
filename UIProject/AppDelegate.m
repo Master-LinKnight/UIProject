@@ -14,9 +14,16 @@
 
 @implementation AppDelegate
 
-
+//初始化整个程序框架结构
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    self.window.rootViewController = [[UIViewController alloc] init];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+//    view.backgroundColor = [UIColor redColor];
+//    [self.window addSubview:view];
+//    [self.window makeKeyAndVisible];
     return YES;
 }
 
