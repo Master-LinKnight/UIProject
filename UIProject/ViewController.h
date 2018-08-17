@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+//所有的控制器都需要自定义
+@interface ViewController : UIViewController {
+    NSTimer* _timerView;
+}
 
+@property (retain, nonatomic) NSTimer* timerView;
 
 @end
 

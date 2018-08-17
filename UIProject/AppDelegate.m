@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,15 @@
 //    view.backgroundColor = [UIColor redColor];
 //    [self.window addSubview:view];
 //    [self.window makeKeyAndVisible];
+    
+//    整个UIKit 框架中只有一个视图控制器， 属于window的属性
+//    视图控制器用来管理界面和处理界面的逻辑类对象
+//    程序启动前必须对根视图控制器赋值
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UIViewController* vcRoot = [[ViewController alloc] init];
+    self.window.rootViewController = vcRoot;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

@@ -7,12 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "View01Controller.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+@synthesize timerView = _timerView;
 
 - (void)createUI {
     [self createLabel];
@@ -20,6 +22,13 @@
     [self createUIView];
     [self createButtonEvent];
     [self createStoreyView];
+    [self createTimerButton];
+}
+
+-(void) createTimerButton {
+//    UIButton* btn = [[UIButton buttonWithType:UIButtonTypeCustom]];
+//    btn.frame = CGRectMake(0, 50, 100, 40);
+//    [btn]
 }
 
 - (void)createLabel {
@@ -123,17 +132,38 @@
 //    }
 }
 
+//当视图控制器第一次被加载显示视图是，调用此函数，初始化资源
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"viewDidLoad, 第一次加载视图！");
     [self createUI];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"viewWillAppear, 视图即将显示！");
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    NSLog(@"viewWillDisappear, 视图即将消失！");
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"viewDidAppear, 视图已经显示！");
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    NSLog(@"viewDidDisappear, 视图已经消失！");
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    View01Controller* vc = [[View01Controller alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 
 @end
