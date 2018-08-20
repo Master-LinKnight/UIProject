@@ -26,9 +26,35 @@
 }
 
 -(void) createTimerButton {
-//    UIButton* btn = [[UIButton buttonWithType:UIButtonTypeCustom]];
-//    btn.frame = CGRectMake(0, 50, 100, 40);
-//    [btn]
+    UIButton* btnStart = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnStart.frame = CGRectMake(50, 50, 100, 40);
+    [btnStart setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [btnStart setTitle:@"启动定时器" forState:UIControlStateNormal];
+    [btnStart addTarget:self action:@selector(timerStart) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnStart];
+    
+    UIButton* btnStop = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnStop.frame = CGRectMake(200, 50, 100, 40);
+    [btnStop setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [btnStop setTitle:@"关闭定时器" forState:UIControlStateNormal];
+    [btnStop addTarget:self action:@selector(timerStop) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnStop];
+}
+
+- (void)timerStart {
+    _timerView = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerUpdate:) userInfo:@"knight" repeats:YES];
+}
+
+- (void)timerUpdate: (NSTimer*) timer {
+    NSLog(@"%@ test!!!", timer.userInfo);
+}
+
+- (void)timerStop {
+    [_timerView invalidate];
+//    if (_timerView != nil)
+//    {
+//        [_timerView invalidate];
+//    }
 }
 
 - (void)createLabel {
