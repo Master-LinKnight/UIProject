@@ -11,9 +11,11 @@
 //所有的控制器都需要自定义
 @interface ViewController : UIViewController {
     NSTimer* _timerView;
+    UISwitch* _mySwitch;
 }
 
 @property (retain, nonatomic) NSTimer* timerView;
+@property (retain, nonatomic) UISwitch* mySwitch;
 
 @end
 

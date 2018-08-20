@@ -15,6 +15,7 @@
 
 @implementation ViewController
 @synthesize timerView = _timerView;
+@synthesize mySwitch = _mySwitch;
 
 - (void)createUI {
     [self createLabel];
@@ -23,6 +24,28 @@
     [self createButtonEvent];
     [self createStoreyView];
     [self createTimerButton];
+    [self createSwitch];
+}
+
+- (void) createSwitch {
+    _mySwitch = [[UISwitch alloc] init];
+    _mySwitch.frame = CGRectMake(10, 400, 80, 40);
+//    _mySwitch.on = YES;
+    [_mySwitch setOn:YES animated:YES];
+    [self.view addSubview:_mySwitch];
+    [_mySwitch setOnTintColor:[UIColor redColor]];
+    [_mySwitch setThumbTintColor:[UIColor whiteColor]];
+    [_mySwitch setTintColor:[UIColor orangeColor]];
+    [_mySwitch addTarget:self action:@selector(swChange:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void) swChange:(UISwitch*) sw {
+    NSLog(@"changed!");
+    if (sw.on == YES) {
+        NSLog(@"open");
+    } else {
+        NSLog(@"close");
+    }
 }
 
 -(void) createTimerButton {
@@ -42,11 +65,13 @@
 }
 
 - (void)timerStart {
-    _timerView = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerUpdate:) userInfo:@"knight" repeats:YES];
+    _timerView = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerUpdate:) userInfo:@"knight" repeats:YES];
 }
 
 - (void)timerUpdate: (NSTimer*) timer {
     NSLog(@"%@ test!!!", timer.userInfo);
+    UIView* view = [self.view viewWithTag:103];
+    view.frame = CGRectMake(view.frame.origin.x + 0.5, view.frame.origin.y + 0.5, view.frame.size.width, view.frame.size.height);
 }
 
 - (void)timerStop {
@@ -149,6 +174,7 @@
     [self.view addSubview:view02];
     [self.view addSubview:view03];
     
+    view03.tag = 103;
 //    [self.view bringSubviewToFront:view02];
 //    [self.view sendSubviewToBack:view03];
 //    UIView* viewFront = self.view.subviews[2];
