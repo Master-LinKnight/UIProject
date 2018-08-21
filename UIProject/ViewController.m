@@ -16,6 +16,10 @@
 @implementation ViewController
 @synthesize timerView = _timerView;
 @synthesize mySwitch = _mySwitch;
+@synthesize slider = _slider;
+@synthesize progressView = _progressView;
+@synthesize stepper = _stepper;
+@synthesize segControl = _segControl;
 
 - (void)createUI {
     [self createLabel];
@@ -25,6 +29,48 @@
     [self createStoreyView];
     [self createTimerButton];
     [self createSwitch];
+    [self createProgressSlider];
+    [self createStepper];
+}
+
+- (void) createStepper {
+    _stepper = [[UIStepper alloc] init];
+    _stepper.frame = CGRectMake(10, 550, 80, 40);
+    _stepper.minimumValue = 0;
+    _stepper.maximumValue = 100;
+    _stepper.value = 10;
+    _stepper.stepValue = 10;
+    _stepper.autorepeat = YES;
+    _stepper.continuous = YES;
+    [_stepper addTarget:self action:@selector(stepChange) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:_stepper];
+    
+    _segControl = [[UISegmentedControl alloc] init];
+    _segControl.frame = CGRectMake(150, 550, 200, 40);
+    [_segControl insertSegmentWithTitle:@"0" atIndex:0 animated:YES];
+    [_segControl insertSegmentWithTitle:@"5" atIndex:1 animated:YES];
+    [_segControl insertSegmentWithTitle:@"10" atIndex:2 animated:YES];
+    _segControl.selectedSegmentIndex = 0;
+    [_segControl addTarget:self action:@selector(segChange) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:_segControl];
+}
+
+- (void) segChange {
+    NSLog(@"value %ld", _segControl.selectedSegmentIndex);
+}
+
+- (void) stepChange {
+    NSLog(@"value %f", _stepper.value);
+}
+
+- (void) createProgressSlider {
+    _progressView = [[UIProgressView alloc] init];
+    _progressView.frame = CGRectMake(50, 500, 200, 40);
+    _progressView.progressTintColor = [UIColor redColor];
+    _progressView.trackTintColor = [UIColor greenColor];
+    _progressView.progress = 0.5;
+    _progressView.progressViewStyle = UIProgressViewStyleDefault;
+    [self.view addSubview:_progressView];
 }
 
 - (void) createSwitch {
@@ -37,6 +83,22 @@
     [_mySwitch setThumbTintColor:[UIColor whiteColor]];
     [_mySwitch setTintColor:[UIColor orangeColor]];
     [_mySwitch addTarget:self action:@selector(swChange:) forControlEvents:UIControlEventValueChanged];
+    
+    _slider = [[UISlider alloc] init];
+    _slider.frame = CGRectMake(10, 450, 300, 40);
+    _slider.maximumValue = 100;
+    _slider.minimumValue = 0;
+    _slider.value = 50;
+    _slider.minimumTrackTintColor = [UIColor blueColor];
+    _slider.maximumTrackTintColor = [UIColor greenColor];
+    _slider.thumbTintColor = [UIColor orangeColor];
+    [_slider addTarget:self action:@selector(pressSlider) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:_slider];
+}
+
+- (void) pressSlider {
+    _progressView.progress = _slider.value/(_slider.maximumValue - _slider.minimumValue);
+    NSLog(@"value %f", _slider.value);
 }
 
 - (void) swChange:(UISwitch*) sw {

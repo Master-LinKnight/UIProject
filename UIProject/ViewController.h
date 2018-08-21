@@ -12,10 +12,18 @@
 @interface ViewController : UIViewController {
     NSTimer* _timerView;
     UISwitch* _mySwitch;
+    UIProgressView* _progressView;
+    UISlider* _slider;
+    UIStepper* _stepper;
+    UISegmentedControl* _segControl;
 }
 
 @property (retain, nonatomic) NSTimer* timerView;
 @property (retain, nonatomic) UISwitch* mySwitch;
+@property (retain, nonatomic) UIProgressView* progressView;
+@property (retain, nonatomic) UISlider* slider;
+@property (retain, nonatomic) UIStepper* stepper;
+@property (retain, nonatomic) UISegmentedControl* segControl;
 
 @end
 
