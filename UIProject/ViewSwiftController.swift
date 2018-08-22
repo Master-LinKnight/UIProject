@@ -12,8 +12,20 @@ class ViewSwiftController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.red;
+//        self.view.backgroundColor = UIColor.red;
         // Do any additional setup after loading the view.
+        self.createUI()
+    }
+    
+    func createUI()->Void {
+        createButton()
+    }
+    
+    func createButton() -> Void {
+        let btn = UIButton()
+        btn.frame = CGRect(x: 200, y: 100, width: 100, height: 40)
+        btn.backgroundColor = UIColor.orange
+        self.view.addSubview(btn)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

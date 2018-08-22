@@ -147,7 +147,7 @@
 - (void)createLabel {
     UILabel* label = [[UILabel alloc] init];
     label.text = @"Hello World!";
-    label.frame = CGRectMake(80, 100, 100, 40);
+    label.frame = CGRectMake(20, 100, 100, 40);
     label.backgroundColor = [UIColor clearColor];
     label.font = [UIFont systemFontOfSize: 16];
     label.textColor = [UIColor blackColor];
