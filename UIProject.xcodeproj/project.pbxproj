@@ -16,6 +16,7 @@
 		2323C110211C7E5B00ED5C21 /* UIProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2323C10F211C7E5B00ED5C21 /* UIProjectTests.m */; };
 		2323C11B211C7E5B00ED5C21 /* UIProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2323C11A211C7E5B00ED5C21 /* UIProjectUITests.m */; };
 		DE56630C2126C12500044F23 /* View01Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = DE56630B2126C12500044F23 /* View01Controller.m */; };
+		DE660FBD212D0482006BA95D /* ViewSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE660FBC212D0482006BA95D /* ViewSwiftController.swift */; };
 		DE8BEE9321250B0D00E0C855 /* arrow-2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE8BEE9121250B0C00E0C855 /* arrow-2.png */; };
 		DE8BEE9421250B0D00E0C855 /* arrow-1.png in Resources */ = {isa = PBXBuildFile; fileRef = DE8BEE9221250B0D00E0C855 /* arrow-1.png */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,8 @@
 		2323C11C211C7E5B00ED5C21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE56630A2126C12500044F23 /* View01Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = View01Controller.h; sourceTree = "<group>"; };
 		DE56630B2126C12500044F23 /* View01Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = View01Controller.m; sourceTree = "<group>"; };
+		DE660FBB212D0481006BA95D /* UIProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		DE660FBC212D0482006BA95D /* ViewSwiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSwiftController.swift; sourceTree = "<group>"; };
 		DE8BEE9121250B0C00E0C855 /* arrow-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-2.png"; sourceTree = "<group>"; };
 		DE8BEE9221250B0D00E0C855 /* arrow-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +124,8 @@
 				2323C105211C7E5B00ED5C21 /* main.m */,
 				DE56630A2126C12500044F23 /* View01Controller.h */,
 				DE56630B2126C12500044F23 /* View01Controller.m */,
+				DE660FBC212D0482006BA95D /* ViewSwiftController.swift */,
+				DE660FBB212D0481006BA95D /* UIProject-Bridging-Header.h */,
 			);
 			path = UIProject;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				TargetAttributes = {
 					2323C0F2211C7E5900ED5C21 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					2323C10A211C7E5B00ED5C21 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -278,6 +284,7 @@
 				2323C0FB211C7E5900ED5C21 /* ViewController.m in Sources */,
 				DE56630C2126C12500044F23 /* View01Controller.m in Sources */,
 				2323C106211C7E5B00ED5C21 /* main.m in Sources */,
+				DE660FBD212D0482006BA95D /* ViewSwiftController.swift in Sources */,
 				2323C0F8211C7E5900ED5C21 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,7 +454,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = UIProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,6 +464,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = UIProject.UIProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UIProject/UIProject-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -463,7 +475,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = UIProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -471,6 +485,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = UIProject.UIProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UIProject/UIProject-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -478,6 +494,7 @@
 		2323C123211C7E5B00ED5C21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = UIProjectTests/Info.plist;
@@ -496,6 +513,7 @@
 		2323C124211C7E5B00ED5C21 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = UIProjectTests/Info.plist;
@@ -514,6 +532,7 @@
 		2323C126211C7E5B00ED5C21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = UIProjectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -531,6 +550,7 @@
 		2323C127211C7E5B00ED5C21 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = UIProjectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -7,6 +7,7 @@
 //
 
 #import "View01Controller.h"
+#import "UIProject-Swift.h"
 
 @interface View01Controller ()
 
@@ -18,6 +19,24 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
+    [self createUI];
+}
+
+- (void) createUI {
+    [self createButton];
+}
+
+- (void) createButton {
+    UIButton *btn = [[UIButton alloc] init];
+    btn.frame = CGRectMake(100, 100, 100, 40);
+    btn.backgroundColor = [UIColor redColor];
+    [btn addTarget:self action:@selector(pressBtn) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+
+- (void) pressBtn {
+    ViewSwiftController *vc = [[ViewSwiftController alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
