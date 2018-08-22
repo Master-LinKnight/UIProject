@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UIProject/ViewController.m"
-            timestampString = "556618263.808647"
+            timestampString = "556622447.934199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "-timerStop"
             landmarkType = "7">
          </BreakpointContent>

@@ -20,6 +20,7 @@
 @synthesize progressView = _progressView;
 @synthesize stepper = _stepper;
 @synthesize segControl = _segControl;
+@synthesize textField = _textField;
 
 - (void)createUI {
     [self createLabel];
@@ -31,6 +32,38 @@
     [self createSwitch];
     [self createProgressSlider];
     [self createStepper];
+    [self createTextField];
+}
+
+- (void) createTextField {
+    self.textField = [[UITextField alloc] init];
+    self.textField.frame = CGRectMake(120, 100, 180, 40);
+    self.textField.text = @"用户名";
+    self.textField.font = [UIFont systemFontOfSize:15];
+    self.textField.textColor = [UIColor blackColor];
+    self.textField.borderStyle = UITextBorderStyleRoundedRect;
+    self.textField.keyboardType = UIKeyboardTypeDefault;
+    self.textField.placeholder = @"请输入用户名...";
+    self.textField.returnKeyType = UIReturnKeyDone;
+    self.textField.secureTextEntry = NO;
+    [self.view addSubview:self.textField];
+    self.textField.delegate = self;
+}
+
+- (void) textFieldDidBeginEditing:(UITextField *)textField {
+    NSLog(@"text begin");
+}
+
+- (void) textFieldDidEndEditing:(UITextField *)textField {
+    NSLog(@"text end");
+}
+
+- (BOOL) textFieldShouldBeginEditing:(UITextField *)textField {
+    return YES;
+}
+
+- (BOOL) textFieldShouldEndEditing:(UITextField *)textField {
+    return YES;
 }
 
 - (void) createStepper {
@@ -278,6 +311,7 @@
 - (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     View01Controller* vc = [[View01Controller alloc] init];
     [self presentViewController:vc animated:YES completion:nil];
+    [self.textField resignFirstResponder];
 }
 
 @end
