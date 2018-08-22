@@ -24,6 +24,22 @@
 
 - (void) createUI {
     [self createButton];
+    [self createScrollView];
+}
+
+- (void) createScrollView {
+    UIScrollView* sv = [[UIScrollView alloc] init];
+    sv.frame = CGRectMake(0, 150, 320, 576);
+    sv.pagingEnabled = YES;
+    sv.scrollEnabled = YES;
+    sv.contentSize = CGSizeMake(320*5, 576);
+    sv.bounces = YES;
+    sv.alwaysBounceHorizontal = YES;
+    sv.alwaysBounceVertical = YES;
+    sv.showsVerticalScrollIndicator = YES;
+    sv.showsHorizontalScrollIndicator = YES;
+    sv.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview: sv];
 }
 
 - (void) createButton {
