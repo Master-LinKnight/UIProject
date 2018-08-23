@@ -25,7 +25,12 @@ class ViewSwiftController: UIViewController {
         let btn = UIButton()
         btn.frame = CGRect(x: 200, y: 100, width: 100, height: 40)
         btn.backgroundColor = UIColor.orange
+        btn.addTarget(self, action: Selector("expressBtn"), for: UIControlEvents.touchDown)
         self.view.addSubview(btn)
+    }
+    
+    func expressBtn() -> Void {
+        NSLog("alert")
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
