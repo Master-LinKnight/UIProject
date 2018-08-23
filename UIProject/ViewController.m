@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "View01Controller.h"
+#import "View02Controller.h"
 
 @interface ViewController ()
 
@@ -222,6 +223,8 @@
         NSLog(@"btn01");
     } else {
         NSLog(@"btn03");
+        View02Controller* vc = [[View02Controller alloc] init];
+        [self presentViewController:vc animated:YES completion:nil];
     }
     NSLog(@"%@", btn);
 }

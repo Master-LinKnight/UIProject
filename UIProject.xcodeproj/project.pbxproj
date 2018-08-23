@@ -17,6 +17,7 @@
 		2323C11B211C7E5B00ED5C21 /* UIProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2323C11A211C7E5B00ED5C21 /* UIProjectUITests.m */; };
 		DE56630C2126C12500044F23 /* View01Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = DE56630B2126C12500044F23 /* View01Controller.m */; };
 		DE660FBD212D0482006BA95D /* ViewSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE660FBC212D0482006BA95D /* ViewSwiftController.swift */; };
+		DE660FFE212EA18D006BA95D /* View02Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = DE660FFD212EA18D006BA95D /* View02Controller.m */; };
 		DE8BEE9321250B0D00E0C855 /* arrow-2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE8BEE9121250B0C00E0C855 /* arrow-2.png */; };
 		DE8BEE9421250B0D00E0C855 /* arrow-1.png in Resources */ = {isa = PBXBuildFile; fileRef = DE8BEE9221250B0D00E0C855 /* arrow-1.png */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,8 @@
 		DE56630B2126C12500044F23 /* View01Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = View01Controller.m; sourceTree = "<group>"; };
 		DE660FBB212D0481006BA95D /* UIProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE660FBC212D0482006BA95D /* ViewSwiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSwiftController.swift; sourceTree = "<group>"; };
+		DE660FFC212EA18D006BA95D /* View02Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = View02Controller.h; sourceTree = "<group>"; };
+		DE660FFD212EA18D006BA95D /* View02Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = View02Controller.m; sourceTree = "<group>"; };
 		DE8BEE9121250B0C00E0C855 /* arrow-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-2.png"; sourceTree = "<group>"; };
 		DE8BEE9221250B0D00E0C855 /* arrow-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +129,8 @@
 				DE56630B2126C12500044F23 /* View01Controller.m */,
 				DE660FBC212D0482006BA95D /* ViewSwiftController.swift */,
 				DE660FBB212D0481006BA95D /* UIProject-Bridging-Header.h */,
+				DE660FFC212EA18D006BA95D /* View02Controller.h */,
+				DE660FFD212EA18D006BA95D /* View02Controller.m */,
 			);
 			path = UIProject;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE660FFE212EA18D006BA95D /* View02Controller.m in Sources */,
 				2323C0FB211C7E5900ED5C21 /* ViewController.m in Sources */,
 				DE56630C2126C12500044F23 /* View01Controller.m in Sources */,
 				2323C106211C7E5B00ED5C21 /* main.m in Sources */,
