@@ -24,7 +24,7 @@
 
 - (void) createUI {
     [self createButton];
-    [self createScrollView];
+//    [self createScrollView];
 }
 
 - (void) createScrollView {
