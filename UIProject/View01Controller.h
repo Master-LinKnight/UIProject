@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface View01Controller : UIViewController
-
+{
+    CGPoint _lastPoint;
+    CGPoint _viewOppositePoint;
+    CGPoint _viewOrginPoint;
+    BOOL _couldMove;
+}
 @end
