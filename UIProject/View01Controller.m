@@ -48,6 +48,7 @@
     }
     _lastPoint = [touch locationInView:self.view];
     UIView* view = (UIView*)[self.view viewWithTag:100];
+    // 拖动效果只能用在矩形内部
     _viewOppositePoint = CGPointMake(view.frame.origin.x + view.frame.size.width, view.frame.origin.y + view.frame.size.height);
     _viewOrginPoint = CGPointMake(view.frame.origin.x, view.frame.origin.y);
     if (_lastPoint.x <= _viewOppositePoint.x && _lastPoint.x >= _viewOrginPoint.x

@@ -20,6 +20,10 @@
 		DE660FFE212EA18D006BA95D /* View02Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = DE660FFD212EA18D006BA95D /* View02Controller.m */; };
 		DE8BEE9321250B0D00E0C855 /* arrow-2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE8BEE9121250B0C00E0C855 /* arrow-2.png */; };
 		DE8BEE9421250B0D00E0C855 /* arrow-1.png in Resources */ = {isa = PBXBuildFile; fileRef = DE8BEE9221250B0D00E0C855 /* arrow-1.png */; };
+		DEC4B8E12137D47F007170C1 /* View03Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B8E02137D47F007170C1 /* View03Controller.m */; };
+		DEC4B8E32137D74F007170C1 /* girl.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DEC4B8E22137D74F007170C1 /* girl.jpeg */; };
+		DEC4B8E52137E3F3007170C1 /* girlStand.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DEC4B8E42137E3F3007170C1 /* girlStand.jpeg */; };
+		DEC4B8E82137F269007170C1 /* View04Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B8E72137F269007170C1 /* View04Controller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,12 @@
 		DE660FFD212EA18D006BA95D /* View02Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = View02Controller.m; sourceTree = "<group>"; };
 		DE8BEE9121250B0C00E0C855 /* arrow-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-2.png"; sourceTree = "<group>"; };
 		DE8BEE9221250B0D00E0C855 /* arrow-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-1.png"; sourceTree = "<group>"; };
+		DEC4B8DF2137D47F007170C1 /* View03Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = View03Controller.h; sourceTree = "<group>"; };
+		DEC4B8E02137D47F007170C1 /* View03Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = View03Controller.m; sourceTree = "<group>"; };
+		DEC4B8E22137D74F007170C1 /* girl.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpeg; sourceTree = "<group>"; };
+		DEC4B8E42137E3F3007170C1 /* girlStand.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girlStand.jpeg; sourceTree = "<group>"; };
+		DEC4B8E62137F269007170C1 /* View04Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = View04Controller.h; sourceTree = "<group>"; };
+		DEC4B8E72137F269007170C1 /* View04Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = View04Controller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,8 @@
 			children = (
 				DE8BEE9221250B0D00E0C855 /* arrow-1.png */,
 				DE8BEE9121250B0C00E0C855 /* arrow-2.png */,
+				DEC4B8E22137D74F007170C1 /* girl.jpeg */,
+				DEC4B8E42137E3F3007170C1 /* girlStand.jpeg */,
 				2323C0F5211C7E5900ED5C21 /* UIProject */,
 				2323C10E211C7E5B00ED5C21 /* UIProjectTests */,
 				2323C119211C7E5B00ED5C21 /* UIProjectUITests */,
@@ -131,6 +143,10 @@
 				DE660FBB212D0481006BA95D /* UIProject-Bridging-Header.h */,
 				DE660FFC212EA18D006BA95D /* View02Controller.h */,
 				DE660FFD212EA18D006BA95D /* View02Controller.m */,
+				DEC4B8DF2137D47F007170C1 /* View03Controller.h */,
+				DEC4B8E02137D47F007170C1 /* View03Controller.m */,
+				DEC4B8E62137F269007170C1 /* View04Controller.h */,
+				DEC4B8E72137F269007170C1 /* View04Controller.m */,
 			);
 			path = UIProject;
 			sourceTree = "<group>";
@@ -257,7 +273,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC4B8E52137E3F3007170C1 /* girlStand.jpeg in Resources */,
 				DE8BEE9321250B0D00E0C855 /* arrow-2.png in Resources */,
+				DEC4B8E32137D74F007170C1 /* girl.jpeg in Resources */,
 				2323C103211C7E5B00ED5C21 /* LaunchScreen.storyboard in Resources */,
 				2323C100211C7E5B00ED5C21 /* Assets.xcassets in Resources */,
 				DE8BEE9421250B0D00E0C855 /* arrow-1.png in Resources */,
@@ -286,6 +304,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC4B8E82137F269007170C1 /* View04Controller.m in Sources */,
+				DEC4B8E12137D47F007170C1 /* View03Controller.m in Sources */,
 				DE660FFE212EA18D006BA95D /* View02Controller.m in Sources */,
 				2323C0FB211C7E5900ED5C21 /* ViewController.m in Sources */,
 				DE56630C2126C12500044F23 /* View01Controller.m in Sources */,

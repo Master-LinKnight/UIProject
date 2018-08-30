@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "View01Controller.h"
 #import "View02Controller.h"
+#import "View03Controller.h"
+#import "View04Controller.h"
 
 @interface ViewController ()
 
@@ -211,19 +213,40 @@
 -(void)createButtonEvent {
     UIButton* btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btn.frame = CGRectMake(100, 170, 100, 40);
-    [btn setTitle:@"btn03" forState:UIControlStateNormal];
+    [btn setTitle:@"btn02" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(pressBtn:) forControlEvents:UIControlEventTouchUpInside];
     [btn addTarget:self action:@selector(touchDown) forControlEvents:UIControlEventTouchDown];
     btn.tag = 200;
     [self.view addSubview:btn];
+    
+    UIButton* btn03 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn03.frame = CGRectMake(170, 170, 100, 40);
+    [btn03 setTitle:@"btn03" forState:UIControlStateNormal];
+    [btn03 addTarget:self action:@selector(pressBtn:) forControlEvents:UIControlEventTouchUpInside];
+    btn03.tag = 300;
+    [self.view addSubview:btn03];
+    
+    UIButton* btn04 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn04.frame = CGRectMake(240, 170, 100, 40);
+    [btn04 setTitle:@"btn04" forState:UIControlStateNormal];
+    [btn04 addTarget:self action:@selector(pressBtn:) forControlEvents:UIControlEventTouchUpInside];
+    btn04.tag = 400;
+    [self.view addSubview:btn04];
 }
 
 -(void) pressBtn: (UIButton*) btn {
     if (btn.tag == 100) {
         NSLog(@"btn01");
-    } else {
-        NSLog(@"btn03");
+    } else if(btn.tag == 200) {
+        NSLog(@"btn02");
         View02Controller* vc = [[View02Controller alloc] init];
+        [self presentViewController:vc animated:YES completion:nil];
+    } else if(btn.tag == 300) {
+        NSLog(@"btn03");
+        View03Controller* vc = [[View03Controller alloc] init];
+        [self presentViewController:vc animated:YES completion:nil];
+    } else if(btn.tag == 400) {
+        View04Controller* vc = [[View04Controller alloc] init];
         [self presentViewController:vc animated:YES completion:nil];
     }
     NSLog(@"%@", btn);
