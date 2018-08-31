@@ -9,6 +9,7 @@
 - UISlider 滑块
 - UITextField 文本栏
 - UIStepper 步进器
+- UISegmentedControl 分段控制器
 
 ## View01
 - 尝试了UITouch 页面视图点击事件
