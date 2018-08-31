@@ -23,3 +23,9 @@
 - UITapGestureRecognizer 点击事件
 - UIPinchGestureRecognizer 缩放
 - UIRotationGestureRecognizer 旋转
+
+## View04
+- 尝试使用 UIGesture 扩展功能
+- UIPanGestureRecognizer 滑动手势
+- UISwipeGestureRecognizer 滑动手势带方向
+- UILongPressGestureRecognizer 长按手势
