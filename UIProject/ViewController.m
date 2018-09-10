@@ -11,6 +11,7 @@
 #import "View02Controller.h"
 #import "View03Controller.h"
 #import "View04Controller.h"
+#import "View05Controller.h"
 
 @interface ViewController ()
 
@@ -212,7 +213,7 @@
 
 -(void)createButtonEvent {
     UIButton* btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btn.frame = CGRectMake(100, 170, 100, 40);
+    btn.frame = CGRectMake(50, 170, 100, 40);
     [btn setTitle:@"btn02" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(pressBtn:) forControlEvents:UIControlEventTouchUpInside];
     [btn addTarget:self action:@selector(touchDown) forControlEvents:UIControlEventTouchDown];
@@ -220,18 +221,25 @@
     [self.view addSubview:btn];
     
     UIButton* btn03 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btn03.frame = CGRectMake(170, 170, 100, 40);
+    btn03.frame = CGRectMake(120, 170, 100, 40);
     [btn03 setTitle:@"btn03" forState:UIControlStateNormal];
     [btn03 addTarget:self action:@selector(pressBtn:) forControlEvents:UIControlEventTouchUpInside];
     btn03.tag = 300;
     [self.view addSubview:btn03];
     
     UIButton* btn04 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btn04.frame = CGRectMake(240, 170, 100, 40);
+    btn04.frame = CGRectMake(190, 170, 100, 40);
     [btn04 setTitle:@"btn04" forState:UIControlStateNormal];
     [btn04 addTarget:self action:@selector(pressBtn:) forControlEvents:UIControlEventTouchUpInside];
     btn04.tag = 400;
     [self.view addSubview:btn04];
+    
+    UIButton* btn05 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn05.frame = CGRectMake(260, 170, 100, 40);
+    [btn05 setTitle:@"btn05" forState:UIControlStateNormal];
+    [btn05 addTarget:self action:@selector(pressBtn:) forControlEvents:UIControlEventTouchUpInside];
+    btn05.tag = 500;
+    [self.view addSubview:btn05];
 }
 
 -(void) pressBtn: (UIButton*) btn {
@@ -247,6 +255,18 @@
         [self presentViewController:vc animated:YES completion:nil];
     } else if(btn.tag == 400) {
         View04Controller* vc = [[View04Controller alloc] init];
+        [self presentViewController:vc animated:YES completion:nil];
+    } else if(btn.tag == 500) {
+        //显式加载XIB
+        //P1 创建时加载的XIB资源文件名，加载XIB做为视图控制器视图
+        //P2 指主文件包，XIB所在的位置
+        //mainBundle是主资源文件包
+        //bundle传nil，函数会自动mainBundle中查找
+        View05Controller* vc = [[View05Controller alloc] initWithNibName:@"View05Controller" bundle: [NSBundle mainBundle]];
+
+        //隐式加载XIB
+        //如果系统中有XIB的名字跟类型View05Controller相同会自动加在
+//        View05Controller* vc = [[View05Controller alloc] init];
         [self presentViewController:vc animated:YES completion:nil];
     }
     NSLog(@"%@", btn);
