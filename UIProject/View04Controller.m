@@ -34,10 +34,20 @@
     [iView removeGestureRecognizer:pan];
     
     //上下左右滑动手势
-    UISwipeGestureRecognizer* swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAct:)];
+//    UISwipeGestureRecognizer* swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAct:)];
     //设定滑动事件的类型
-    swipe.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
-    [iView addGestureRecognizer:swipe];
+//    swipe.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
+//    [iView addGestureRecognizer:swipe];
+    
+    // fix 代码
+    UISwipeGestureRecognizer *swipeGestureRecognizerLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAct:)];
+    [iView addGestureRecognizer:swipeGestureRecognizerLeft];
+    swipeGestureRecognizerLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    
+    UISwipeGestureRecognizer *swipeGestureRecognizerRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAct:)];
+    [iView addGestureRecognizer:swipeGestureRecognizerRight];
+    swipeGestureRecognizerRight.direction = UISwipeGestureRecognizerDirectionRight;
+    
     
     //长按手势
     UILongPressGestureRecognizer* longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pressLong:)];
@@ -59,6 +69,9 @@
     } else if (swipe.direction & UISwipeGestureRecognizerDirectionLeft) {
         NSLog(@"swipe left!");
     }
+    
+    //fix 代码
+    NSLog(@"%ld", swipe.direction);
 }
 
 -(void) panAct:(UIPanGestureRecognizer*) pan {
